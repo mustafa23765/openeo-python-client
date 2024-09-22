@@ -1,0 +1,50 @@
+# import necessary packages
+import openeo
+
+# connect with the backend
+eoconn = openeo.connect(
+        "openeo.vito.be"
+        ).authenticate_oidc()
+
+# Define user-defined input parameters
+aoi = {
+    "type": 'FeatureCollection',
+    "features": [{
+        "type": 'Feature',
+        "properties": {},
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  5.179324150085449,
+                  51.2498689148547
+                ],
+                [
+                  5.178744792938232,
+                  51.24672597710759
+                ],
+                [
+                  5.185289382934569,
+                  51.24504696935156
+                ],
+                [
+                  5.18676996231079,
+                  51.245342479161295
+                ],
+                [
+                  5.187370777130127,
+                  51.24918393390799
+                ],
+                [
+                  5.179324150085449,
+                  51.2498689148547
+                ]
+              ]
+            ]
+          }
+    }
+    ]
+}
+
+time_range = ["2022-06-01", "2022-10-01"]
